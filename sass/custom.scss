@@ -14,6 +14,9 @@ $tundora: #444;
 $mine-shaft: #363636;
 $cod-gray: #111;
 
+body{
+	overflow-x: hidden;
+}
 
 .sticky{
 	position:fixed;
@@ -21,10 +24,24 @@ $cod-gray: #111;
 	height:100px;
 }
 
-.stickytab{
+.worktabstuck{
+	padding-top: 300px;
+	height: 800px;
 	position:fixed;
-	top:0;
+	top:-90px;
 	left:125px;
+	color: blue;
+
+	p{
+		position: absolute;
+		bottom:0;
+		width: 100%;
+		-webkit-transform: rotate(-90deg);
+		font-size: 8em;
+		letter-spacing: .6em;
+		color: blue;
+		transition:1s ease-in-out;
+	}
 }
 
 nav{
@@ -36,7 +53,7 @@ nav{
 	height:6%;
 	min-height:50px;
 	z-index:300;
-	border-bottom:5px solid blue;
+	border-bottom: 5px solid blue;
 
 	.flexbox{
 		display: flex;
@@ -58,7 +75,7 @@ nav{
 		font-weight: bold;
 		min-width: 250px;
 		background:transparent;
-		border-bottom:5px solid white;
+		border-bottom:5px solid blue;
 
 		a{
 			color:white;
@@ -96,7 +113,6 @@ nav{
 
 		.work:hover{
 			background-color: blue;
-			min-width:200px;
 			letter-spacing: .15em;
 
 			a{
@@ -111,19 +127,17 @@ nav{
 			background:white;
 			margin-left:5px;
 			transform: skew(-30deg,0deg);
-			transition: .4s ease-in-out;
+			transition: .7s ease-in-out;
 
 		}
 
 		.profile:hover{
-			background-color: blue;
-			min-width:200px;
 			letter-spacing: .15em;
 
 
 			
 			a{
-				color: white;
+				color: blue;
 			}
 
 		}
@@ -141,7 +155,6 @@ nav{
 		}
 
 		.contact:hover{
-			min-width:200px;
 			background-color: blue;
 			letter-spacing: .15em;
 
@@ -208,6 +221,7 @@ body{
 		text-align: center;
 		font-size: 10em;
 		background:blue;
+		padding-bottom:20px;
 		color: white;
 
 	}
@@ -220,6 +234,9 @@ body{
 	a{
 		text-align: center;
 		font-size: 3em;
+		text-decoration: none;
+		border-bottom: 5px dotted blue;
+		color: blue;
 	}
 
 	.frontlinks{
@@ -228,56 +245,82 @@ body{
 		margin-left: 25%;
 		justify-content: space-around;
 		padding-bottom: 5%;
+
 	}
 }
 
 .main{
 	display:flex;
 	z-index:100;
-	background:blue;
+	// background:blue;
 
 }
 
 .sidetab{
-	min-width:250px;
+	min-width:245px;
 	float:left;
 	height:200vh;
-	background:blue;
-	margin-top:100vh;
+	margin-top:110vh;
+	color:blue;
 
 	.worktab{
 		padding-top: 300px;
 		height: 800px;
-		background-color:blue;
 		position:relative;
+		color: blue;
 
 		p{
 			position: absolute;
 			bottom:0;
 			width: 100%;
 			-webkit-transform: rotate(-90deg);
-			font-size: 10em;
-			letter-spacing: .3em;
-			color: white;
+			font-size: 8em;
+			letter-spacing: .6em;
+			color: blue;
+			transition:1s ease-in-out;
+		}
+	}
+
+	.abouttab{
+		padding-top: 4700px;
+		height: 800px;
+		position:relative;
+		color: white;
+
+		p{
+			position: absolute;
+			bottom:0;
+			width: 100%;
+			-webkit-transform: rotate(-90deg);
+			font-size: 8em;
+			letter-spacing: .6em;
+			color: blue;
+			transition:1s ease-in-out;
 		}
 	}
 }
 
+
+
 .contents{
 	float:right;
 	margin-top:100vh;
-	background:white;
 	position:relative;
-	background:lightgray;
 
 	#pushed{
-		padding-top:35%;
+		padding-top:110vh;
+		// background-color:blue;
+	}
+
+	#pushed2{
+		padding-top:20vh;
+		// background-color:blue;
 	}
 
 	.section1{
 		padding-top:50px;
 		height:150px;
-		background:blue;
+		// background:blue;
 		width: 100%;
 		text-align: center;
 		color: white;
@@ -300,14 +343,33 @@ body{
 
 	.mywork{
 		width: 100%;
+			border-left:5px dotted blue;
+			border-bottom:5px dotted blue;
 
 		.workitem{
-			width: 80%;
-			margin-left: 10%;
+			width: 100%;
+			// background:lightgray;
+			// -moz-box-shadow:    inset 0 0 20px #000000;
+			//  -webkit-box-shadow: inset 0 0 20px #000000;
+			//  box-shadow: inset 0px 0px 100px 10px rgba(0,0,0,.5);
+
+
 		}
 
 		.itemcontent{
 			display: flex;
+			width: 80%;
+			// background:white;
+			padding-top:60px;
+			padding-bottom:10%;
+
+		}
+
+		.lines{
+			width:300px;
+			height: 100px;
+			// background:red;
+			border-bottom:5px dotted blue;
 		}
 
 		.leftside, .rightside{
@@ -315,26 +377,56 @@ body{
 		}
 
 		.rightside{
-			padding-top:200px;
 			padding-left:50px;
-			// padding-right:50px;
+
+			p{
+			font-size: 2em;
+			margin:0;
+			}
+
+			button{
+				border: 5px blue;
+				border-style:solid;
+				font-size: 2em;
+				background:white;
+				transition:.2s ease-in-out;
+				padding-left:20px;
+				padding-right:20px;
+				padding-top:10px;
+				padding-bottom:10px;
+
+
+
+			}
+
+			button:hover{
+				// border-style:dotted;
+				color: blue;
+
+
+			}
 		}
 
 		h3{
-			font-size:4em;
-			padding-left:1.4em;
-			color: white;
-			background:blue
+			font-size:5em;
+			padding-left:3.2em;
+			color: black;
+			margin:0;
+			background:white;
+			width: 100%;
+			text-align: left;
+
+
 		}
 
 		.preview{
 			height: 100%;
 			min-width:300px;
 			width: 98%;
-			background-size:cover;
+			background:url(../grid.png);
 			flex-wrap: wrap;
 			transition: .2s ease-in-out;
-			border:dotted 5px blue;
+			// border:dotted 5px blue;
 			overflow: hidden;
 
 			img{
@@ -349,28 +441,90 @@ body{
 	}
 
 
+.trail{
+	width:1%;
+	margin-left:27.2%;
+	// background:green;
+	height:800px;
+	border-right:5px dotted blue;
 
+}
 
 	.aboutme{
-		color:white;
-		width: 60%;
-		margin-left:20%;
+		color:black;
+		width: 70%;
+		margin-left:15%;
 		margin-bottom:10%;
+		// background:green;
 
 		img{
 			float: left;
-			width: 200px;
+			height: 400px;
 			margin-right:40px;
+
+			border:5px dotted blue;
 		}
 
+
 		p{
-			font-size: 2.4em;
+			font-size: 2em;
+			margin:0;
+			transition:1s ease-in-out;
+			padding-bottom: 80px;
+
+
+		}
+
+		.skills{
+			display: flex;
+			justify-content:center;
+			// background:green;
+		}
+
+		.codinglist{
+			display: flex;
+			width: 47%;
+			margin-left:3%;
+
+		}
+
+		.designlist{
+			display: flex;
+			width: 47%;
+			align-self: flex-start;
+			margin-left:3%;
+		}
+
+		#coding{
+			background:blue;
+			color: white;
+		}
+
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			margin:0;
+			padding:0;
+			padding-bottom: 30px;
+			clear:left;
+		}
+
+		li{
+			background:white;
+			color: blue;
+			height: 20px;
+			border: 1px solid blue;
+			display: inline;
+			padding:10px 20px;
+			margin:5px;
 		}
 	}
 
 }
 
-.beepme{
-	height:60vh;
+.contact{
+	height:50vh;
+	width:100%;
+	background:green;
 }
 
